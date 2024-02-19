@@ -14,11 +14,15 @@
             <div class="title">{{ $t('walletBalance') }}</div>
             <div class="data">
               <div>{{ user.balance.toFixed(2) }}</div>
-              <router-link :to="'/wallet/withdraw'">
+              <!-- 
+
+  <router-link :to="'/wallet/withdraw'">
                 <el-button type="primary" size="large" icon="me-icon-dollar" class="custom-btn">
                   {{ $t('wallet') }}
                 </el-button>
               </router-link>
+
+            -->
             </div>
           </div>
           <div class="account-container">
@@ -43,11 +47,15 @@
             <div class="button-container">
               <el-button type="primary" class="custom-btn" size="large" :icon="CopyDocument"
                 @click="performCopyText(affiliatelink)">{{ $t('copy') }}</el-button>
-              <router-link :to="{ name: 'agent', path: '/team/agent', query: { perform: 'add' } }">
+              <!--
+
+
+                <router-link :to="{ name: 'agent', path: '/team/agent', query: { perform: 'add' } }">
                 <el-button type="primary" size="large" icon="me-icon-addagent" class="custom-btn">
                   {{ $t('addagent') }}
                 </el-button>
               </router-link>
+            -->
               <router-link :to="{ name: 'player', path: '/team/player', query: { perform: 'add' } }">
                 <el-button type="primary" class="custom-btn" size="large" icon="me-icon-addplayer">
                   {{ $t('addplayer') }}

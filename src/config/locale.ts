@@ -17,6 +17,10 @@ export const localeList = [
     text: 'English',
     locale: 'en',
   },
+  {
+    text: 'Tiếng Việt',
+    locale: 'vi-vn',
+  },
   // {
   //     text: '阿塞拜疆语',
   //     locale: 'az',
