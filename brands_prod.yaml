@@ -1,12 +1,3 @@
-brands:
-- deploy: agent-gpi-v2
-  brand: GPI-V2
-  site: https://t1.srvptt.com/
-  lang: zh-CN
-- deploy: agent-pito7-v2
-  brand: GPI-V2
-  site: https://pitopito7.com/
-  lang: zh-CN
 - deploy: agent-momovn
   brand: MOMOVN
   site: https://momo-bet.com/
@@ -15,11 +6,3 @@ brands:
   brand: MOPH
   site: https://momobetph.com/
   lang: en-US
-- deploy: agent-v226
-  brand: V226
-  site: https://gbclub.com/
-  lang: zh-TW
-- deploy: agent-v227
-  brand: V227
-  site: https://sunbet668.com/
-  lang: zh-TW
