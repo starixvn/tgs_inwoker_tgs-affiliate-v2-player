@@ -1,5 +1,5 @@
 brands:
-- deploy: agent-momovn
+- deploy: agent-momo
   brand: MOMOVN
   site: https://stg.momo-bet.com/
   lang: vi-VN
