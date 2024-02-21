@@ -1,24 +1,13 @@
 <template>
   <div class="me-wang-editor">
     <Toolbar v-if="showEditor" class="wang-toolbar" :editor="editorRef" :default-config="config.toolbar" :mode="mode" />
-    <Editor
-      v-if="showEditor"
-      :model-value="modelValue"
-      :default-content="defaultContent"
-      :default-html="defaultHtml"
-      :default-config="config.editor"
-      :mode="mode"
-      style="overflow-y: hidden"
-      @update:model-value="emit('update:modelValue', $event)"
-      @on-created="handleCreated"
-      @on-change="emit('onChange', $event)"
-      @on-destroyed="emit('onDestroyed', $event)"
-      @on-max-length="emit('onMaxLength', $event)"
-      @on-focus="emit('onFocus', $event)"
-      @on-blur="emit('onBlur', $event)"
-      @custom-alert="(...args:[string,string]) => emit('customAlert', ...args)"
-      @custom-paste="(...args:[IDomEditor,ClipboardEvent]) => emit('customPaste', ...args)"
-    />
+    <Editor v-if="showEditor" :model-value="modelValue" :default-content="defaultContent" :default-html="defaultHtml"
+      :default-config="config.editor" :mode="mode" style="overflow-y: hidden"
+      @update:model-value="emit('update:modelValue', $event)" @on-created="handleCreated"
+      @on-change="emit('onChange', $event)" @on-destroyed="emit('onDestroyed', $event)"
+      @on-max-length="emit('onMaxLength', $event)" @on-focus="emit('onFocus', $event)" @on-blur="emit('onBlur', $event)"
+      @custom-alert="(...args: [string, string]) => emit('customAlert', ...args)"
+      @custom-paste="(...args: [IDomEditor, ClipboardEvent]) => emit('customPaste', ...args)" />
   </div>
 </template>
 
@@ -93,24 +82,29 @@ const handleCreated = (editor: IDomEditor) => {
   height: 500px;
   display: flex;
   flex-direction: column;
+
   .wang-toolbar {
     border-bottom: 1px solid var(--el-border-color);
   }
+
   :deep(.w-e-scroll) {
     &::-webkit-scrollbar {
       z-index: 1;
       border-radius: 4px;
       width: 6px;
     }
+
     &::-webkit-scrollbar-thumb {
       background-color: rgba(144, 147, 153, 0.3);
       width: 100%;
       opacity: 0.3;
       border-radius: 4px;
     }
+
     overflow-y: overlay !important;
   }
 }
+
 :global(.dark .me-wang-editor .w-e-scroll::-webkit-scrollbar-thumb) {
   background-color: rgba(163, 166, 173, 0.3);
 }
