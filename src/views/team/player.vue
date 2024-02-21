@@ -135,7 +135,6 @@
             <template #prepend>
               <el-select v-model="addPlayerParams.areaCode" placeholder="Select" style="width: 100px" size="large">
                 <el-option label="+84" value="84" />
-                <el-option label="+852" value="+852" />
               </el-select>
             </template>
           </el-input>
