@@ -29,12 +29,12 @@ service.interceptors.request.use(
     if (userStore.token) {
       config.headers['token'] = userStore.token;
     }
-    if(config.url!.indexOf("export") >= 0){
+    if (config.url!.indexOf("export") >= 0) {
       config.responseType = 'blob';
-      
+
     }
     config.headers['accept-language'] =
-      localStorage.getItem('me-config-locale') ?? localeConfig.localeSetting.locale ?? 'zh-cn';
+      localStorage.getItem('me-config-locale') ?? localeConfig.localeSetting.locale ?? 'vi-vn';
     return config;
   },
   (error) => {
@@ -104,7 +104,7 @@ export function request<R, P extends unknown[] = [], T = boolean>(
 ) {
   const axiosService = async (...args: P): Promise<R> => {
     //loading放到微任务中去执行以确保在自动调用请求时等待所有的宏任务中的生命周期函数执行完再创建loading实例 以规避currentInstance的相关警告
-    
+
     try {
       !options?.noLoading && Promise.resolve(undefined).then(loading);
       const { data: res } = await service(await axiosConfig(...args));
@@ -132,7 +132,7 @@ export function request<R, P extends unknown[] = [], T = boolean>(
       if (options?.success) {
         ElMessage.success({ message: res.errmsg });
       }
-      
+
       closeLoading();
       return options?.needAll ? res : res;
     } catch (e) {

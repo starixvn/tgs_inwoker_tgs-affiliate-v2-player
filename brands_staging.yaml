@@ -2,8 +2,8 @@ brands:
 - deploy: agent-momo
   brand: MOMOVN
   site: https://stg.momo-bet.com/
-  lang: vi-VN
+  lang: vi-vn
 - deploy: agent-moph
   brand: MOPH
   site: https://stg-moph.rpgp.cc/
-  lang: en-US
+  lang: vi-vn
