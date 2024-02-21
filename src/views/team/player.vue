@@ -129,7 +129,9 @@
           <el-input v-model="addPlayerParams.confirmPassword" size="large" :placeholder="$t('reEnterPassword')" clearable
             type="password" />
         </el-form-item>
-        <el-form-item :label="t('phone')" required>
+        <!--
+
+ <el-form-item :label="t('phone')" required>
           <el-input v-model="addPlayerParams.phone" size="large" :placeholder="t('phoneFormat')" :type="number"
             :minlength="8" :maxlength="32">
             <template #prepend>
@@ -142,6 +144,9 @@
         <el-form-item :label="t('email')" required>
           <el-input v-model="addPlayerParams.email" size="large" :placeholder="$t('enterEmail')" clearable />
         </el-form-item>
+
+
+       -->
         <div class="tnc">
           <div class="tnc-checkbox">
             <el-checkbox v-model="addPlayerParams.tnc" size="large" />
@@ -157,11 +162,11 @@
           <el-button type="primary" :disabled="addPlayerParams.username === '' ||
             addPlayerParams.password === '' ||
             addPlayerParams.confirmPassword !== addPlayerParams.password ||
-            addPlayerParams.phone === '' ||
-            addPlayerParams.phone.length < 6 ||
-            addPlayerParams.phone.length > 32 ||
-            addPlayerParams.tnc === false ||
-            addPlayerParams.email === ''
+            //  addPlayerParams.phone === '' ||
+            //  addPlayerParams.phone.length < 6 ||
+            //  addPlayerParams.phone.length > 32 ||
+            addPlayerParams.tnc === false
+            //  addPlayerParams.email === ''
             " @click="onAddPlayer()">
             {{ t('registerNow') }}
           </el-button>
@@ -406,10 +411,10 @@ export default defineComponent({
     },
     async onAddPlayer() {
       //check phone number length if less than 6 show error and only contain number
-      if (this.addPlayerParams.phone.length < 6 || isNaN(Number(this.addPlayerParams.phone))) {
-        ElMessage.error(this.t('invalidPhoneFormat'));
-        return;
-      }
+      //  if (this.addPlayerParams.phone.length < 6 || isNaN(Number(this.addPlayerParams.phone))) {
+      //    ElMessage.error(this.t('invalidPhoneFormat'));
+      //    return;
+      //  }
 
       //check username and must contain only 6-16alphanumberic
       if (!/^[a-zA-Z0-9]{6,16}$/.test(this.addPlayerParams.username)) {
@@ -418,10 +423,10 @@ export default defineComponent({
       }
 
       //check email must be email format
-      if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(this.addPlayerParams.email)) {
-        ElMessage.error(this.t('invalidEmailFormat'));
-        return;
-      }
+      //  if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(this.addPlayerParams.email)) {
+      //    ElMessage.error(this.t('invalidEmailFormat'));
+      //    return;
+      //  }
 
       let param = new CheckConditionParams();
       param.username = this.addPlayerParams.username;
