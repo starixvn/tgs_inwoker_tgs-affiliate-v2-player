@@ -56,7 +56,7 @@
                 </el-button>
               </router-link>
             -->
-              <router-link :to="{ name: 'player', path: '/team/player', query: { perform: 'add' } }">
+              <router-link :to="{ name: 'player', path: '/player', query: { perform: 'add' } }">
                 <el-button type="primary" class="custom-btn" size="large" icon="me-icon-addplayer">
                   {{ $t('addplayer') }}
                 </el-button>

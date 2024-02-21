@@ -10,9 +10,7 @@ export const routes: RouteRecordRaw[] = [
         component: () => import('@/views/dashboard/index.vue'),
         meta: {
           title: 'dashboard',
-
-          // icon: 'me-icon-dashboard'
-
+          icon: 'me-icon-dashboard'
         },
       },
     ],

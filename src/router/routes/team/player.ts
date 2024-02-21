@@ -5,6 +5,6 @@ export const routes: RouteRecordRaw[] = [
     name: 'player',
     props: (route) => ({ perform: route.query.perform }),
     component: () => import('@/views/team/player.vue'),
-    meta: { title: 'player' },
+    meta: { title: 'player', icon: 'me-icon-team' },
   },
 ];
