@@ -24,15 +24,8 @@
       </el-col>
 
       <el-col :md="6" :sm="24">
-        <el-button
-          type="primary"
-          class="btnsearch"
-          size="large"
-          style="float: right"
-          icon="mel-icon-plus"
-          @click="addPlayerDialogVisible = true"
-          >{{ $t('addPlayer') }}</el-button
-        >
+        <el-button type="primary" class="btnsearch" size="large" style="float: right" icon="mel-icon-plus"
+          @click="addPlayerDialogVisible = true">{{ $t('addPlayer') }}</el-button>
       </el-col>
     </el-row>
 
@@ -40,12 +33,8 @@
       <el-col :span="24">
         <el-row style="margin-bottom: 5px">
           <el-col :span="24">
-            <el-popover
-              placement="left-start"
-              :width="200"
-              trigger="click"
-              content="this is content, this is content, this is content"
-            >
+            <el-popover placement="left-start" :width="200" trigger="click"
+              content="this is content, this is content, this is content">
               <template #reference>
                 <el-button type="primary" class="btnsearch" size="large" style="float: right" icon="mel-icon-filter">
                 </el-button>
@@ -55,13 +44,8 @@
                   <el-checkbox v-model="isAllColumnsChecked" @change="toggleAllColumns">{{
                     $t('checkAll')
                   }}</el-checkbox>
-                  <el-checkbox
-                    v-for="(item, index) in tableColumn"
-                    :key="index"
-                    :label="$t(index)"
-                    :disabled="item.mustShow"
-                    v-model="item.isShow"
-                  />
+                  <el-checkbox v-for="(item, index) in tableColumn" :key="index" :label="$t(index)"
+                    :disabled="item.mustShow" v-model="item.isShow" />
                 </div>
               </template>
             </el-popover>
@@ -70,29 +54,14 @@
         <el-table :data="tableData" border class="test">
           <el-table-column :label="t('player')" prop="username" min-width="150" />
           <el-table-column :label="t('playercode')" prop="playercode" v-if="tableColumn.playercode.isShow" />
-          <el-table-column
-            :label="t('viplevel')"
-            prop="viplevel"
-            align="center"
-            width="90"
-            v-if="tableColumn.viplevel.isShow"
-          />
+          <el-table-column :label="t('viplevel')" prop="viplevel" align="center" width="90"
+            v-if="tableColumn.viplevel.isShow" />
           <el-table-column :label="t('areacode')" prop="areacode" v-if="tableColumn.areacode.isShow" />
           <el-table-column :label="t('phone')" prop="phone" v-if="tableColumn.phone.isShow" />
-          <el-table-column
-            :label="t('registeredtime')"
-            prop="registeredtime"
-            :formatter="formatDateTime"
-            width="180"
-            v-if="tableColumn.registeredtime.isShow"
-          />
-          <el-table-column
-            :label="t('lastloginon')"
-            prop="lastloginon"
-            :formatter="formatDateTime"
-            width="180"
-            v-if="tableColumn.lastloginon.isShow"
-          />
+          <el-table-column :label="t('registeredtime')" prop="registeredtime" :formatter="formatDateTime" width="180"
+            v-if="tableColumn.registeredtime.isShow" />
+          <el-table-column :label="t('lastloginon')" prop="lastloginon" :formatter="formatDateTime" width="180"
+            v-if="tableColumn.lastloginon.isShow" />
 
           <el-table-column :label="t('balance')" align="center" width="150">
             <template #default="scope">
@@ -127,29 +96,12 @@
               </el-popover>
             </template>
           </el-table-column>
-          <el-table-column
-            :label="t('totaldepositamount')"
-            :formatter="formatPrice"
-            prop="totaldepositamount"
-            align="right"
-            width="150"
-            v-if="tableColumn.totaldepositamount.isShow"
-          ></el-table-column>
-          <el-table-column
-            :label="t('totalwithdrawamount')"
-            :formatter="formatPrice"
-            prop="totalwithdrawamount"
-            align="right"
-            width="150"
-            v-if="tableColumn.totalwithdrawamount.isShow"
-          ></el-table-column>
-          <el-table-column
-            :label="t('status')"
-            prop="status"
-            align="center"
-            :formatter="formatStatus"
-            v-if="tableColumn.status.isShow"
-          />
+          <el-table-column :label="t('totaldepositamount')" :formatter="formatPrice" prop="totaldepositamount"
+            align="right" width="150" v-if="tableColumn.totaldepositamount.isShow"></el-table-column>
+          <el-table-column :label="t('totalwithdrawamount')" :formatter="formatPrice" prop="totalwithdrawamount"
+            align="right" width="150" v-if="tableColumn.totalwithdrawamount.isShow"></el-table-column>
+          <el-table-column :label="t('status')" prop="status" align="center" :formatter="formatStatus"
+            v-if="tableColumn.status.isShow" />
 
           <template #empty>
             {{ t('noRecord') }}
@@ -159,15 +111,9 @@
     </el-row>
     <el-row>
       <div class="demo-pagination-block">
-        <el-pagination
-          v-model:current-page="searchForm.page"
-          v-model:page-size="searchForm.rows"
-          :page-sizes="[10, 50, 200]"
-          layout="sizes, prev, pager, next"
-          :total="totalRowCount"
-          @size-change="handleSizeChange"
-          @current-change="handleCurrentChange"
-        />
+        <el-pagination v-model:current-page="searchForm.page" v-model:page-size="searchForm.rows"
+          :page-sizes="[10, 50, 200]" layout="sizes, prev, pager, next" :total="totalRowCount"
+          @size-change="handleSizeChange" @current-change="handleCurrentChange" />
       </div>
     </el-row>
     <el-dialog v-model="addPlayerDialogVisible" :title="t('addPlayer')" :fullscreen="globalStore.isMobile">
@@ -176,35 +122,19 @@
           <el-input v-model="addPlayerParams.username" size="large" :placeholder="$t('usernameFormat')" clearable />
         </el-form-item>
         <el-form-item :label="t('password')" required>
-          <el-input
-            v-model="addPlayerParams.password"
-            size="large"
-            :placeholder="$t('enterPassword')"
-            clearable
-            type="password"
-          />
+          <el-input v-model="addPlayerParams.password" size="large" :placeholder="$t('enterPassword')" clearable
+            type="password" />
         </el-form-item>
         <el-form-item :label="t('confirmPassword')" required>
-          <el-input
-            v-model="addPlayerParams.confirmPassword"
-            size="large"
-            :placeholder="$t('reEnterPassword')"
-            clearable
-            type="password"
-          />
+          <el-input v-model="addPlayerParams.confirmPassword" size="large" :placeholder="$t('reEnterPassword')" clearable
+            type="password" />
         </el-form-item>
         <el-form-item :label="t('phone')" required>
-          <el-input
-            v-model="addPlayerParams.phone"
-            size="large"
-            :placeholder="t('phoneFormat')"
-            :type="number"
-            :minlength="8"
-            :maxlength="32"
-          >
+          <el-input v-model="addPlayerParams.phone" size="large" :placeholder="t('phoneFormat')" :type="number"
+            :minlength="8" :maxlength="32">
             <template #prepend>
               <el-select v-model="addPlayerParams.areaCode" placeholder="Select" style="width: 100px" size="large">
-                <el-option label="+86" value="86" />
+                <el-option label="+84" value="84" />
                 <el-option label="+852" value="+852" />
               </el-select>
             </template>
@@ -225,20 +155,15 @@
       </el-form>
       <template #footer>
         <span class="dialog-footer">
-          <el-button
-            type="primary"
-            :disabled="
-              addPlayerParams.username === '' ||
-              addPlayerParams.password === '' ||
-              addPlayerParams.confirmPassword !== addPlayerParams.password ||
-              addPlayerParams.phone === '' ||
-              addPlayerParams.phone.length < 6 ||
-              addPlayerParams.phone.length > 32 ||
-              addPlayerParams.tnc === false ||
-              addPlayerParams.email === ''
-            "
-            @click="onAddPlayer()"
-          >
+          <el-button type="primary" :disabled="addPlayerParams.username === '' ||
+            addPlayerParams.password === '' ||
+            addPlayerParams.confirmPassword !== addPlayerParams.password ||
+            addPlayerParams.phone === '' ||
+            addPlayerParams.phone.length < 6 ||
+            addPlayerParams.phone.length > 32 ||
+            addPlayerParams.tnc === false ||
+            addPlayerParams.email === ''
+            " @click="onAddPlayer()">
             {{ t('registerNow') }}
           </el-button>
         </span>
@@ -415,7 +340,7 @@ export default defineComponent({
     this.getItems();
     this.getStatuses();
   },
-  mounted() {},
+  mounted() { },
   watch: {
     tableColumn: {
       deep: true,
@@ -554,10 +479,12 @@ export default defineComponent({
 .balance-item {
   margin-bottom: 0px;
 }
+
 .balance-item .el-form-item__label {
   height: 25px;
   line-height: 25px;
 }
+
 .balance-item .el-form-item__content {
   height: 25px;
   line-height: 25px;
@@ -568,6 +495,7 @@ export default defineComponent({
 .tnc {
   display: flex;
   align-items: center;
+
   .tnc-checkbox {
     padding-right: 16px;
     width: 25%;
@@ -575,6 +503,7 @@ export default defineComponent({
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .tnc-content {
     display: inline-flex;
     justify-content: flex-end;
@@ -582,6 +511,7 @@ export default defineComponent({
     padding-right: 20px;
   }
 }
+
 .title {
   font-weight: bold;
   line-height: 30px;
@@ -590,18 +520,22 @@ export default defineComponent({
 .el-row {
   margin-bottom: 20px;
 }
+
 .datefrom {
   margin-left: 10px;
 }
+
 .btn {
   background: transparent;
   color: var(--el-input-border-color);
   box-shadow: 0 0 0 1px var(--el-input-border-color, var(--el-border-color)) inset;
   border: none;
 }
+
 .empty-row {
   background-color: #000000;
 }
+
 .subtotal-row {
   background-color: #000000;
 }
@@ -611,6 +545,7 @@ export default defineComponent({
   justify-content: flex-end;
   gap: 10px;
 }
+
 .table {
   .search {
     margin-bottom: -18px;
@@ -629,15 +564,18 @@ export default defineComponent({
   width: 20px;
   height: 20px;
 }
+
 .el-checkbox.el-checkbox--large.is-checked {
   background-image: url(/assets/images/checkbox.png);
 }
+
 .el-checkbox-button.is-checked .el-checkbox-button__inner {
   color: var(--el-checkbox-button-checked-text-color);
   background-color: #208eff;
   border-color: var(--el-checkbox-button-checked-border-color);
   box-shadow: -1px 0 0 0 var(--el-color-primary-light-7);
 }
+
 .el-checkbox.el-checkbox--large .el-checkbox__inner {
   display: none;
 }

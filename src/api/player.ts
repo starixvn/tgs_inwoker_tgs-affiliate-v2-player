@@ -3,7 +3,7 @@ export class AddPlayerParams {
   username = '';
   password = '';
   confirmPassword = '';
-  areaCode = '+86';
+  areaCode = '+84';
   phone = '';
   email = '';
   tnc = false;
