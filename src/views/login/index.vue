@@ -6,25 +6,12 @@
       <div class="form" @keyup.enter.exact="login">
         <el-form ref="formRef" :model="loginParams" class="EPForm">
           <el-form-item prop="username">
-            <el-input
-              v-model="loginParams.username"
-              class="textInput"
-              autofocus
-              :placeholder="t('username')"
-              clearable
-              size="large"
-            />
+            <el-input v-model="loginParams.username" class="textInput" autofocus :placeholder="t('username')" clearable
+              size="large" />
           </el-form-item>
           <el-form-item prop="password" class="textInput">
-            <el-input
-              v-model="loginParams.password"
-              class="textInput"
-              type="password"
-              :placeholder="t('password')"
-              clearable
-              show-password
-              size="large"
-            />
+            <el-input v-model="loginParams.password" class="textInput" type="password" :placeholder="t('password')"
+              clearable show-password size="large" />
           </el-form-item>
 
           <el-button class="submit" type="primary" size="large" @click="login">{{ t('login') }}</el-button>
@@ -32,9 +19,9 @@
       </div>
 
       <div class="btm-container">
-        <el-button text @click="dialogVisible = true" class="button-forgot">
+        <!-- <el-button text @click="dialogVisible = true" class="button-forgot">
           {{ $t('iForgotMyPassword') }}
-        </el-button>
+        </el-button> -->
 
         <me-locale-select v-if="localeConfig.localeList.length > 1" class="item"></me-locale-select>
       </div>
@@ -48,22 +35,12 @@
             </el-form-item>
 
             <el-form-item :label="t('verificationCode')" required>
-              <el-input
-                v-model="resetPassword.validatecode"
-                class="textInput"
-                :placeholder="t('verificationCode')"
-                :maxlength="6"
-                autofocus
-                clearable
-              >
+              <el-input v-model="resetPassword.validatecode" class="textInput" :placeholder="t('verificationCode')"
+                :maxlength="6" autofocus clearable>
                 <template #append>
                   <div v-if="forgotPassword.timer === 60">
-                    <el-button
-                      type="primary"
-                      class="btn-custom"
-                      :disabled="forgotPassword.email === ''"
-                      @click="performRequestCode"
-                    >
+                    <el-button type="primary" class="btn-custom" :disabled="forgotPassword.email === ''"
+                      @click="performRequestCode">
                       {{ t('requestCode') }}
                     </el-button>
                   </div>
@@ -73,29 +50,16 @@
                       {{ forgotPassword.timer > 0 ? '(' + forgotPassword.timer + ')' : '' }}
                     </el-button>
                   </div>
-                </template></el-input
-              >
+                </template></el-input>
             </el-form-item>
             <el-form-item :label="t('newPassword')" required>
-              <el-input
-                v-model="resetPassword.newpwd"
-                class="textInput"
-                type="password"
-                :placeholder="t('newPassword')"
-                clearable
-                show-password
-              />
+              <el-input v-model="resetPassword.newpwd" class="textInput" type="password" :placeholder="t('newPassword')"
+                clearable show-password />
             </el-form-item>
 
             <el-form-item :label="t('confirmPassword')" required>
-              <el-input
-                v-model="forgotPassword.confirmpass"
-                class="textInput"
-                type="password"
-                :placeholder="t('reEnterPassword')"
-                clearable
-                show-password
-              />
+              <el-input v-model="forgotPassword.confirmpass" class="textInput" type="password"
+                :placeholder="t('reEnterPassword')" clearable show-password />
             </el-form-item>
           </el-form>
         </div>
@@ -271,6 +235,7 @@ const login = async () => {
         height: calc(var(--el-component-size) - 2px);
       }
     }
+
     :deep(.el-input--large) {
       .captcha {
         height: calc(var(--el-component-size-large) - 2px);
@@ -282,28 +247,34 @@ const login = async () => {
         height: calc(var(--el-component-size-small) - 2px);
       }
     }
+
     .el-form-item {
       width: 100%;
     }
+
     .submit {
       width: fit-content;
       padding: 10px 20px;
       display: block;
     }
   }
+
   .btm-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     .button-forgot {
       margin-bottom: 20px;
     }
   }
+
   .btn-custom {
     background-color: var(--el-color-primary) !important;
     color: #fff !important;
     border-radius: 0px;
+
     &.is-disabled {
       background-color: var(--el-button-disabled-bg-color) !important;
       color: #fff !important;
