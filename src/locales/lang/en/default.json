@@ -316,6 +316,7 @@
   "phoneFormat": "Enter 8~32 digits",
   "invalidPhoneFormat": "Invalid Phone Format",
   "accumulatedProfitShare": "Accumulated Profit Share",
+  "accumulateNegativeProfitShare": "Cumulative negative dividend",
   "checkAll": "Check All",
   "ifFailPressRefresh": "If fail, please refresh the page",
   "mustMatchPasswordFormat": "Password must be 8 characters and contain at least one alphabet",

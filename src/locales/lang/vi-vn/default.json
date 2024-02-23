@@ -301,6 +301,7 @@
   "phoneFormat": "Nhập 8-32 số",
   "invalidPhoneFormat": "Nhập số điện thoại đang hoạt động",
   "accumulatedProfitShare": "Kết toán hoa hồng",
+  "accumulateNegativeProfitShare": "số hoa hồng âm tích lũy",
   "checkAll": "Chọn tất cả",
   "ifFailPressRefresh": "Nếu trình duyệt không tự động tải lại , xin nhấn nút tải lại",
   "mustMatchPasswordFormat": "Mật khẩu cần 8 số trở lên và ít nhất 1 chữ cái",

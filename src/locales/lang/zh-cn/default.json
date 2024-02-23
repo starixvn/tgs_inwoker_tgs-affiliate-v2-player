@@ -316,6 +316,7 @@
   "phoneFormat": "請輸入8~32位數字",
   "invalidPhoneFormat": "請輸入有效的電話號碼",
   "accumulatedProfitShare": "累计结算分红",
+  "accumulateNegativeProfitShare": "累计负分红",
   "checkAll": "全选",
   "ifFailPressRefresh": "如果您的浏览器无法自动重新加载，请按下刷新按钮",
   "mustMatchPasswordFormat": "密码必须8位以上、至少1字母",

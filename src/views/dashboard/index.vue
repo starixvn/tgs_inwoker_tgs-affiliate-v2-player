@@ -26,8 +26,12 @@
             </div>
           </div>
           <div class="account-container">
-            <div class="title">{{ $t('accumulatedProfitShare') }}</div>
+            <div class="title">{{ $t('accumulateNegativeProfitShare') }}</div>
             <div class="data">{{ user.accumulatedprofitsharing }}</div>
+          </div>
+          <div class="account-container">
+            <div class="title">{{ $t('dividendpercentage') }}</div>
+            <div class="data">{{ user.dividendpercentage }}%</div>
           </div>
           <div class="account-container">
             <div class="title">{{ $t('referralCode') }}</div>
