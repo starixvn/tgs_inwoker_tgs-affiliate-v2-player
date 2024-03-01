@@ -7,3 +7,7 @@ brands:
   brand: MOPH
   site: https://stg-moph.rpgp.cc/
   lang: vi-vn
+- deploy: agent-momotest
+  brand: MOMOTEST
+  site: https://stg-momotest.rpgp.cc/
+  lang: vi-vn
