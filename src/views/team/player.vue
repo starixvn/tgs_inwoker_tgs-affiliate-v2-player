@@ -23,10 +23,14 @@
         </el-form>
       </el-col>
 
-      <el-col :md="6" :sm="24">
+      <!--
+
+  <el-col :md="6" :sm="24">
         <el-button type="primary" class="btnsearch" size="large" style="float: right" icon="mel-icon-plus"
           @click="addPlayerDialogVisible = true">{{ $t('addPlayer') }}</el-button>
       </el-col>
+
+    -->
     </el-row>
 
     <el-row>
@@ -39,11 +43,12 @@
                 <el-button type="primary" class="btnsearch" size="large" style="float: right" icon="mel-icon-filter">
                 </el-button>
               </template>
+
               <template #default>
                 <div class="demo-rich-conent" style="display: flex; gap: 5px; flex-direction: column">
                   <el-checkbox v-model="isAllColumnsChecked" @change="toggleAllColumns">{{
-                    $t('checkAll')
-                  }}</el-checkbox>
+        $t('checkAll')
+      }}</el-checkbox>
                   <el-checkbox v-for="(item, index) in tableColumn" :key="index" :label="$t(index)"
                     :disabled="item.mustShow" v-model="item.isShow" />
                 </div>
@@ -64,6 +69,7 @@
             v-if="tableColumn.lastloginon.isShow" />
 
           <el-table-column :label="t('balance')" align="center" width="150">
+
             <template #default="scope">
               <el-popover trigger="click" placement="left" :width="350">
                 <template #reference>
@@ -126,8 +132,8 @@
             type="password" />
         </el-form-item>
         <el-form-item :label="t('confirmPassword')" required>
-          <el-input v-model="addPlayerParams.confirmPassword" size="large" :placeholder="$t('reEnterPassword')" clearable
-            type="password" />
+          <el-input v-model="addPlayerParams.confirmPassword" size="large" :placeholder="$t('reEnterPassword')"
+            clearable type="password" />
         </el-form-item>
         <!--
 
@@ -157,17 +163,18 @@
           </div>
         </div>
       </el-form>
+
       <template #footer>
         <span class="dialog-footer">
           <el-button type="primary" :disabled="addPlayerParams.username === '' ||
-            addPlayerParams.password === '' ||
-            addPlayerParams.confirmPassword !== addPlayerParams.password ||
-            //  addPlayerParams.phone === '' ||
-            //  addPlayerParams.phone.length < 6 ||
-            //  addPlayerParams.phone.length > 32 ||
-            addPlayerParams.tnc === false
-            //  addPlayerParams.email === ''
-            " @click="onAddPlayer()">
+        addPlayerParams.password === '' ||
+        addPlayerParams.confirmPassword !== addPlayerParams.password ||
+        //  addPlayerParams.phone === '' ||
+        //  addPlayerParams.phone.length < 6 ||
+        //  addPlayerParams.phone.length > 32 ||
+        addPlayerParams.tnc === false
+        //  addPlayerParams.email === ''
+        " @click="onAddPlayer()">
             {{ t('registerNow') }}
           </el-button>
         </span>
@@ -175,6 +182,7 @@
     </el-dialog>
   </el-card>
 </template>
+
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -560,6 +568,7 @@ export default defineComponent({
   }
 }
 </style>
+
 <style>
 .el-checkbox.el-checkbox--large {
   background-image: url(/assets/images/uncheckbox.png);
