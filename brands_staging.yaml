@@ -1,5 +1,5 @@
 brands:
-- deploy: agent-momo
-  brand: MOMOVN
-  site: https://stg.momovn.rpgp.cc/
+- deploy: agent-momotest
+  brand: MOMOTEST
+  site: https://stg-momotest.rpgp.cc/
   lang: vi-vn
