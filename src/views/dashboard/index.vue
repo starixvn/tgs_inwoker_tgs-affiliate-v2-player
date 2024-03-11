@@ -36,7 +36,7 @@
           <div class="account-container">
             <div class="title">{{ $t('referralCode') }}</div>
             <div class="data">
-              <div>{{ user.invitationCode }}</div>ou
+              <div>{{ user.invitationCode }}</div>
               <el-button size="large" type="primary" class="custom-btn" :icon="CopyDocument" @click="() => {
       performCopyText(user.invitationCode);
     }
