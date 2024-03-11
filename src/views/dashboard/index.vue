@@ -27,7 +27,7 @@
           </div>
           <div class="account-container">
             <div class="title">{{ $t('accumulateNegativeProfitShare') }}</div>
-            <div class="data">{{ user.accumulatedprofitsharing }}</div>
+            <div class="data">{{ user.accumulatedprofitsharing > 0 ? 0 : user.accumulatedprofitsharing }}</div>
           </div>
           <div class="account-container">
             <div class="title">{{ $t('dividendpercentage') }}</div>
@@ -36,7 +36,7 @@
           <div class="account-container">
             <div class="title">{{ $t('referralCode') }}</div>
             <div class="data">
-              <div>{{ user.invitationCode }}</div>
+              <div>{{ user.invitationCode }}</div>ou
               <el-button size="large" type="primary" class="custom-btn" :icon="CopyDocument" @click="() => {
       performCopyText(user.invitationCode);
     }
