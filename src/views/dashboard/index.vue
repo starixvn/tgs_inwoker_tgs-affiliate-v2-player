@@ -276,10 +276,6 @@ onMounted(async () => {
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-  @media (max-width: 465px) {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 .another-big-title {
